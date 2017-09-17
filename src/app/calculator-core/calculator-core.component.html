@@ -1,39 +1,57 @@
-<div class="form-group">
-</div>
-
 
 <div class="panel panel-primary">
   <div class="panel-heading"><h4>Calculator</h4></div>
-  <div class="panel-body"><input type="text" class="form-control"/>
+  <div class="panel-body">
+    <input [(ngModel)]="expression" type="text" class="form-control expression-input" style="margin-bottom: 10px;" />
     <div class="button-wrapper">
-      <div class="btn-group btn-toolbar" role="group">
+      <div class="btn-group btn-toolbar btn-line" role="group">
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
-          <div class="btn-group btn-wrapper" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">1</button>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+          <button type="button" class="btn btn-primary" (click)="extendExpressionWith('1')">1</button>
           </div>
-          <div class="btn-group btn-wrapper" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">2</button>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+          <button type="button" class="btn btn-primary" (click)="extendExpressionWith('2')">2</button>
           </div>
-          <div class="btn-group btn-wrapper" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">3</button>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+          <button type="button" class="btn btn-primary" (click)="extendExpressionWith('3')">3</button>
           </div>
-          <div class="btn-group" role="group" aria-label="...">
-          <button type="button" class="btn btn-default">/</button>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+          <button type="button" class="btn btn-primary" (click)="extendExpressionWith('/')">/</button>
           </div>
-          <div class="btn-group " role="group" aria-label="...">
-          <button type="button" class="btn btn-default">
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+          <button type="button" class="btn btn-primary" (click)="clearLast()">
             <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
           </button>
           </div>
-          <div class="btn-group " role="group" aria-label="...">
-          <button type="button" class="btn btn-default">
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+          <button type="button" class="btn btn-primary" (click)="clearExpression()">
             <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
           </button>
           </div>
         </div>
-
-
-
+      </div>
+      <!---->
+      <div class="btn-group btn-toolbar btn-line" role="group">
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" (click)="extendExpressionWith('4')">4</button>
+          </div>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" (click)="extendExpressionWith('5')">5</button>
+          </div>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" (click)="extendExpressionWith('6')">6</button>
+          </div>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" (click)="extendExpressionWith('*')">*</button>
+          </div>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" (click)="extendExpressionWith('(')">(</button>
+          </div>
+          <div class="btn-group calculator-btn" role="group" aria-label="...">
+            <button type="button" class="btn btn-primary" (click)="extendExpressionWith(')')">)</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
