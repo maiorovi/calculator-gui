@@ -24,4 +24,8 @@ export class CalculatorCoreComponent implements OnInit {
     this.expression = this.expression.substring(0, this.expression.length - 1)
   }
 
+  handleKeyPressed(event) {
+    this.expression += event.key;
+  }
+
 }
