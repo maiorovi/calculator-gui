@@ -8,8 +8,7 @@ export class KeyPressDirective {
 
   constructor() { }
 
-  @HostListener('window:keypress', ['$event']) onKeyPress(event: KeyboardEvent) {
-    console.log(event);
+  @HostListener('window:keydown', ['$event']) onKeyDown(event:KeyboardEvent) {
     this.keyPressedEvent.emit(event)
   }
 

@@ -2,7 +2,8 @@
 <div class="panel panel-primary">
   <div class="panel-heading"><h4>Calculator</h4></div>
   <div class="panel-body">
-    <input [(ngModel)]="expression" type="text" class="form-control expression-input" style="margin-bottom: 10px;" keypresshandler (key-pressed)="handleKeyPressed($event)" />
+    <input [(ngModel)]="expression" type="text" class="form-control expression-input" style="margin-bottom: 10px;"
+           keypresshandler (key-pressed)="handleKeyPressed($event)" (focus)="handleFocus()" (blur)="handleBlur()" />
     <!---->
     <div class="btn-group btn-toolbar btn-line" role="group">
       <div class="btn-group btn-group-justified" role="group" aria-label="...">
