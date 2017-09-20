@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CalculationService} from "../calculation.service";
 
 @Component({
   selector: 'calculator-core',
@@ -6,8 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calculator-core.component.css']
 })
 export class CalculatorCoreComponent implements OnInit {
-  expression:String = '';
-  constructor() { }
+  private static URL = "http://localhost:8080/expression/";
+  expression:string = '';
+
+  constructor(private calculationService:CalculationService) { }
 
   ngOnInit() {
   }
@@ -21,11 +24,19 @@ export class CalculatorCoreComponent implements OnInit {
   }
 
   clearLast() {
-    this.expression = this.expression.substring(0, this.expression.length - 1)
+    this.expression = this.expression.substring(0, this.expression.length - 1);
   }
 
   handleKeyPressed(event) {
     this.expression += event.key;
+  }
+
+  submitExpressionAndProcessResult() {
+    this.calculationService.evaluateExpression(this.expression)
+      .subscribe(response => {
+        let json = response.json();
+        this.expression = json.initialExpression + "=" + json.evaluationResult;
+      });
   }
 
 }

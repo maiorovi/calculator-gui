@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { CalculatorCoreComponent } from './calculator-core/calculator-core.component';
 import {FormsModule} from "@angular/forms";
 import { KeyPressDirective } from './key-press.directive';
+import {HttpModule} from "@angular/http";
+import {CalculationService} from "./calculation.service";
 
 @NgModule({
   declarations: [
@@ -14,9 +16,12 @@ import { KeyPressDirective } from './key-press.directive';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    CalculationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
